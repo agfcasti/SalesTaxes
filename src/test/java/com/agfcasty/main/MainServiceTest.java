@@ -60,7 +60,7 @@ public class MainServiceTest {
         MainService instance = new MainService();
         Receipt receipt = new Receipt();
         receipt.setSalesTaxes(1.5);
-        receipt.setTotalAmount(29.89);
+        receipt.setTotalAmount(29.83);
         Receipt expResult = receipt;
         Receipt result = instance.mainService(products, country);
         Double salesTax = result.getSalesTaxes();
