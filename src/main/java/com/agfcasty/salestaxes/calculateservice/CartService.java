@@ -1,5 +1,6 @@
 package com.agfcasty.salestaxes.calculateservice;
 
+import static com.agfcasty.salestaxes.calculateservice.CalculateService.logger;
 import java.util.List;
 import com.agfcasty.salestaxes.product.Product;
 import com.agfcasty.salestaxes.receipt.Receipt;
@@ -23,8 +24,8 @@ public class CartService {
             for (Product product : listProduct) {
                 System.out.println(product.getQuantity() + " " + product.getName() + " " + product.getTaxedCost());
             }
-            System.out.println("Sales taxes: " + receipt.getSalesTaxes());
-            System.out.println("Total: " + receipt.getTotalAmount());
+            logger.info("Sales taxes: " + receipt.getSalesTaxes());
+            logger.info("Total: " + receipt.getTotalAmount());
         }
 
     }

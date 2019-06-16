@@ -5,6 +5,7 @@
  */
 package com.agfcasty.main;
 
+import com.agfcasty.salestaxes.calculateservice.CalculateService;
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -25,6 +26,7 @@ import static junit.framework.Assert.assertEquals;
  */
 public class MainServiceTest {
     
+    protected static final org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(MainServiceTest.class.getName());
     public MainServiceTest() {
     }
     
@@ -131,11 +133,11 @@ public class MainServiceTest {
     @Test
     public void testMainService() {
         /*Execution of three carts*/
-        System.out.println("START - All carts");
+        logger.info("START - All carts");
         testMainServiceFirstCart();
         testMainServiceSecondCart();
         testMainServiceThirdCart();
-        System.out.println("END - All carts");
+        logger.info("END - All carts");
     }
 
 }

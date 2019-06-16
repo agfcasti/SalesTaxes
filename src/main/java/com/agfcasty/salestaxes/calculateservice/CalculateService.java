@@ -4,6 +4,7 @@ import com.agfcasty.salestaxes.Utils.CalculateUtility;
 import java.util.List;
 import com.agfcasty.salestaxes.product.Product;
 import com.agfcasty.salestaxes.receipt.Receipt;
+import java.util.logging.Logger;
 
 /**
  * A class of services to calculate the values of the receipt
@@ -12,6 +13,7 @@ import com.agfcasty.salestaxes.receipt.Receipt;
  */
 public class CalculateService {
 
+    protected static final org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(CalculateService.class.getName());
     private final Double TAX_IMPORTED = 0.05;
 
     public Receipt calculateCheckoutReceipt(List<Product> productList, String country) {
@@ -50,7 +52,7 @@ public class CalculateService {
             receipt.setSalesTaxes(CalculateUtility.truncate(salesTaxes));
             receipt.setTotalAmount(CalculateUtility.truncate(totalAmount));
         } catch (Exception ex) {
-            System.out.println("Generic error during cart calculation");
+            logger.info("Generic error during cart calculation");
         }
 
         return receipt;
