@@ -22,7 +22,7 @@ public class CartService {
         List<Product> listProduct = receipt.getProductsReceipt();
         if (listProduct != null && !listProduct.isEmpty()) {
             for (Product product : listProduct) {
-                System.out.println(product.getQuantity() + " " + product.getName() + " " + product.getTaxedCost());
+                logger.info(product.getQuantity() + " " + product.getName() + " " + product.getTaxedCost());
             }
             logger.info("Sales taxes: " + receipt.getSalesTaxes());
             logger.info("Total: " + receipt.getTotalAmount());
