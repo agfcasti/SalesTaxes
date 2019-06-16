@@ -5,7 +5,7 @@
  */
 package com.agfcasty.main;
 
-import com.agfcasty.salestaxes.calculateservice.CalculateService;
+
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -19,14 +19,16 @@ import com.agfcasty.salestaxes.product.OthersProduct;
 import com.agfcasty.salestaxes.product.Product;
 import com.agfcasty.salestaxes.receipt.Receipt;
 import static junit.framework.Assert.assertEquals;
-
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 /**
  *
  * @author CastiglioniAG
  */
 public class MainServiceTest {
     
-    protected static final org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(MainServiceTest.class.getName());
+    private static final Logger logger = LogManager.getLogger(MainServiceTest.class.getName());
+    
     public MainServiceTest() {
     }
     

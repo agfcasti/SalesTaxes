@@ -1,9 +1,10 @@
 package com.agfcasty.salestaxes.calculateservice;
 
-import static com.agfcasty.salestaxes.calculateservice.CalculateService.logger;
 import java.util.List;
 import com.agfcasty.salestaxes.product.Product;
 import com.agfcasty.salestaxes.receipt.Receipt;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -11,6 +12,8 @@ import com.agfcasty.salestaxes.receipt.Receipt;
  */
 public class CartService {
 
+    private static final Logger logger = LogManager.getLogger(CartService.class.getName());
+    
     public Receipt processCart(List<Product> productList, String country) {
         CalculateService calculateService = new CalculateService();
         //return receipt
@@ -18,7 +21,7 @@ public class CartService {
     }
 
     public void printReceipt(Receipt receipt) {
-        System.out.println("----Receipt----");
+        logger.info("----Receipt----");
         List<Product> listProduct = receipt.getProductsReceipt();
         if (listProduct != null && !listProduct.isEmpty()) {
             for (Product product : listProduct) {
